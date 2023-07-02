@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 import Blog from './components/Blog.vue';
 import PaginateBlog from './components/PaginateBlog.vue';
@@ -50,8 +50,9 @@ const disableButtons = computed(() => {
   }
   return response;
 })
-
-obtenerBlogs();
+onMounted(() => {
+  obtenerBlogs();
+});
 </script>
 
 <template>
